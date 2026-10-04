@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Two's Complement Addition</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Two's Complement Addition</h1>
+</div>
+
+<div class="row">
+
+    <div class="column side">
+
+        <strong>Menu</strong>
+
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Database</a>
+
+        <strong>Projects</strong>
+
+       <a href="java1.html">NOT GATE</a>
+       <a href="java2.html">AND Gate</a>
+       <a href="java4.html">OR Gate</a>
+       <a href="java5.html">Flip-Flop Circuit</a>
+       <a href="bmi.html">BMI Calculator</a>
+       
+
+    </div>
+
+    <div class="column">
+
+        <h2>Two's Complement Addition</h2>
+
+        <p>Two's Complement is used to represent positive and negative integers in binary.</p>
+
+        <img src="images/adding.jpg" style="width:300px; max-width:100%;">
+
+        <h3>Two's Complement Addition</h3>
+
+        <p>Enter two integers from -128 to 127.</p>
+
+        <label for="number1">First Number:</label>
+
+        <input type="number" id="number1" min="-128" max="127">
+
+        <br><br>
+
+        <label for="number2">Second Number:</label>
+
+        <input type="number" id="number2" min="-128" max="127">
+
+        <br><br>
+
+        <button onclick="addNumbers()">Add Numbers</button>
+
+        <h3>Result</h3>
+
+        <p id="binary1"></p>
+
+        <p id="binary2"></p>
+
+        <p id="addition"></p>
+
+        <p id="result"></p>
+
+        <p id="overflow"></p>
+
+    </div>
+
+</div>
+
+<script>
+
+function toTwosComplement(number) {
+
+    if (number < 0) {
+        number = 256 + number;
+    }
+
+    return number.toString(2).padStart(8, "0");
+}
+
+function addNumbers() {
+
+    let number1 = parseInt(document.getElementById("number1").value);
+    let number2 = parseInt(document.getElementById("number2").value);
+
+    if (isNaN(number1) || isNaN(number2)) {
+
+        document.getElementById("result").innerHTML =
+            "Please enter both numbers.";
+
+        return;
+    }
+
+    if (number1 < -128 || number1 > 127 || number2 < -128 || number2 > 127) {
+
+        document.getElementById("result").innerHTML =
+            "Please enter numbers between -128 and 127.";
+
+        return;
+    }
+
+    let binary1 = toTwosComplement(number1);
+    let binary2 = toTwosComplement(number2);
+
+    let sum = number1 + number2;
+
+    let overflow = sum < -128 || sum > 127;
+
+    let resultNumber = ((sum + 128) % 256) - 128;
+
+    let binaryResult = toTwosComplement(resultNumber);
+
+    document.getElementById("binary1").innerHTML =
+        "First Number: " + number1 + " = " + binary1;
+
+    document.getElementById("binary2").innerHTML =
+        "Second Number: " + number2 + " = " + binary2;
+
+    document.getElementById("addition").innerHTML =
+        binary1 + " + " + binary2 + " = " + binaryResult;
+
+    document.getElementById("result").innerHTML =
+        "Decimal Result: " + sum;
+
+    if (overflow) {
+
+        document.getElementById("overflow").innerHTML =
+            "Overflow: Yes";
+
+    } else {
+
+        document.getElementById("overflow").innerHTML =
+            "Overflow: No";
+    }
+}
+
+</script>
+
+</body>
+</html>
