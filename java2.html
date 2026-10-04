@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AND Gate</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>AND Gate</h1>
+</div>
+
+<div class="row">
+
+    <div class="column side">
+
+        <strong>Menu</strong>
+
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Database</a>
+
+        <strong>Projects</strong>
+
+        <a href="java1.html">NOT Gate</a>
+		<a href="java3.html">XOR Gate</a>
+		<a href="java4.html">OR Gate</a>
+		<a href="java5.html">Flip-Flop Circuit</a>
+		<a href="bmi.html">BMI Calculator</a>
+     
+
+    </div>
+
+    <div class="column">
+
+        <h2>AND Logic Gate</h2>
+
+        <img id="myImage" src="images/input0.png" style="width:600px">
+
+        <p>Input 1</p>
+
+        <button onclick="input1=0; document.getElementById('myImage').src=input2==0?'images/input0.png':'images/input210.png'">
+            0 (OFF)
+        </button>
+
+        <button onclick="input1=1; document.getElementById('myImage').src=input2==0?'images/input01.png':'images/input11.png'">
+            1 (ON)
+        </button>
+
+        <p>Input 2</p>
+
+        <button onclick="input2=0; document.getElementById('myImage').src=input1==0?'images/input0.png':'images/input01.png'">
+            0 (OFF)
+        </button>
+
+        <button onclick="input2=1; document.getElementById('myImage').src=input1==0?'images/input210.png':'images/input11.png'">
+            1 (ON)
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+let input1 = 0;
+let input2 = 0;
+</script>
+
+</body>
+</html>
