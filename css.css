@@ -31,34 +31,23 @@ body {
     max-width: 1100px;
     margin: 30px auto;
     padding: 0 20px;
+    gap: 20px;
 }
 
 .column.side {
     width: 230px;
+    flex-shrink: 0;
     background: #ffffff;
     padding: 25px 15px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     max-height: 480px;
-    overflow-y: hidden; 
+    overflow-y: hidden;
     scroll-behavior: smooth;
 }
 
 .column.side:hover {
     overflow-y: auto;
-}
-
-.column.side::-webkit-scrollbar {
-    width: 6px;
-}
-
-.column.side::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.column.side::-webkit-scrollbar-thumb {
-    background: #2a5298;
-    border-radius: 10px;
 }
 
 .column.side strong {
@@ -87,6 +76,16 @@ body {
     color: white;
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(42, 82, 152, 0.3);
+}
+
+.column.middle {
+    flex: 1;
+    min-width: 0;
+}
+
+.column.middle img {
+    max-width: 100%;
+    height: auto;
 }
 
 @media (max-width: 700px) {
