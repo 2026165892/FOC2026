@@ -39,7 +39,26 @@ body {
     padding: 25px 15px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    height: fit-content;
+    max-height: 480px;
+    overflow-y: hidden; 
+    scroll-behavior: smooth;
+}
+
+.column.side:hover {
+    overflow-y: auto;
+}
+
+.column.side::-webkit-scrollbar {
+    width: 6px;
+}
+
+.column.side::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.column.side::-webkit-scrollbar-thumb {
+    background: #2a5298;
+    border-radius: 10px;
 }
 
 .column.side strong {
@@ -78,6 +97,8 @@ body {
 
     .column.side {
         width: 100%;
+        max-height: none;
+        overflow-y: visible;
         margin-bottom: 20px;
     }
 

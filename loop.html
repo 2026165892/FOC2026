@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Adrian Pop - For Loop Logic</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>For Loop Logic (Multiplication Table)</h1>
+</div>
+
+<div class="row">
+
+    <div class="column side">
+        <strong>Pages</strong>
+        <a href="index.html">Course</a>
+        <a href="projects.html">Projects</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Databases</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="devteam.html">Dev Team</a>
+
+        <strong>Projects</strong>
+        <a href="java1.html">NOT Gate</a>
+        <a href="java2.html">AND Gate</a>
+        <a href="java3.html">XOR Gate</a>
+        <a href="java4.html">OR Gate</a>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href="addition.html">Addition in Two's Complement Notation</a>
+		<a href="product.html">Basic Product Calculation</a>
+		<a href="ifelse.html">Conditionals</a>
+    </div>
+
+    <div class="column">
+        <h2>For Loop Multiplier</h2>
+
+        <div class="calc-container">
+            <p>
+                <label for="num1">Generate multiplication table for:</label><br>
+                <input type="number" id="num1" value="5">
+            </p>
+            <button onclick="generateTable()">Run For Loop</button>
+            
+            <div id="result" style="margin-top: 20px; color: #333; line-height: 1.6;">
+            
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function generateTable() {
+        let n1 = document.getElementById("num1").value;
+        let number = Number(n1);
+        
+        
+        let outputText = "<h3>Results:</h3>";
+
+        
+        for (let i = 1; i <= 10; i++) {
+            let rowResult = number * i;
+            outputText += number + " x " + i + " = " + rowResult + "<br>";
+        }
+
+        
+        document.getElementById("result").innerHTML = outputText;
+    }
+</script>
+
+</body>
+</html>

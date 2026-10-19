@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Adrian Pop - Basic Product Calculation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>Basic Product Calculation</h1>
+</div>
+
+<div class="row">
+
+    <div class="column side">
+        <strong>Pages</strong>
+        <a href="index.html">Course</a>
+        <a href="projects.html">Projects</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Databases</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="devteam.html">Dev Team</a>
+
+        <strong>Projects</strong>
+        <a href="java1.html">NOT Gate</a>
+        <a href="java2.html">AND Gate</a>
+        <a href="java3.html">XOR Gate</a>
+        <a href="java4.html">OR Gate</a>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href="addition.html">Addition in Two's Complement Notation</a>
+		<a href="ifelse.html">Conditionals</a>
+		<a href="loop.html">Loop</a>
+    </div>
+
+    <div class="column">
+        <h2>Basic Product Calculation</h2>
+
+        <div class="calc-container">
+            <p>
+                <label for="num1">Enter Number 1:</label><br>
+                <input type="number" id="num1">
+            </p>
+            <p>
+                <label for="num2">Enter Number 2:</label><br>
+                <input type="number" id="num2">
+            </p>
+            <button onclick="calculateProduct()">Calculate Product</button>
+            
+            <h3 id="result" style="margin-top: 20px; color: #333;">The product is: </h3>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function calculateProduct() {
+        let n1 = document.getElementById("num1").value;
+        let n2 = document.getElementById("num2").value;
+
+        let number1 = Number(n1);
+        let number2 = Number(n2);
+
+        let product = number1 * number2;
+
+        document.getElementById("result").innerText = "The product is: " + product;
+    }
+</script>
+
+</body>
+</html>

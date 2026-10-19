@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Adrian Pop - If-Else Logic</title>
+  <link rel="icon" type="image/png" href="images/iconss.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>If-Else Logic (Conditionals)</h1>
+</div>
+
+<div class="row">
+
+    <div class="column side">
+        <strong>Pages</strong>
+        <a href="index.html">Course</a>
+        <a href="projects.html">Projects</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Databases</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="devteam.html">Dev Team</a>
+
+        <strong>Projects</strong>
+        <a href="java1.html">NOT Gate</a>
+        <a href="java2.html">AND Gate</a>
+        <a href="java3.html">XOR Gate</a>
+        <a href="java4.html">OR Gate</a>
+        <a href="bmi.html">BMI Calculator</a>
+        <a href="addition.html">Addition in Two's Complement Notation</a>
+		<a href="product.html">Basic Product Calculation</a>
+		<a href="loop.html">Loop</a>
+    </div>
+
+    <div class="column">
+        <h2>Enter Number To Determine If It's Even Or Odd.</h2>
+
+        <div class="calc-container">
+            <p>
+                <label for="num1">Enter a Number:</label><br>
+                <input type="number" id="num1">
+            </p>
+            <button onclick="checkNumber()">Check Number</button>
+            
+            <h3 id="result" style="margin-top: 20px; color: #333;">The number is: </h3>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function checkNumber() {
+        let n1 = document.getElementById("num1").value;
+        let number1 = Number(n1);
+
+        // If the number divided by 2 has a remainder of 0, it is even.
+        // Otherwise, it jumps to the 'else' block.
+        if (number1 % 2 === 0) {
+            document.getElementById("result").innerText = "The number is: EVEN";
+        } else {
+            document.getElementById("result").innerText = "The number is: ODD";
+        }
+    }
+</script>
+
+</body>
+</html>
