@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum of Even Numbers</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+  <p>Enter an upper limit number:</p>
+
+  <input type="number" id="limit" aria-label="Upper limit number">
+  <button onclick="sumEvens()">Calculate</button>
+ 
+  <p>The sum of all even numbers up to that limit is:</p>
+  <h2 id="result"></h2>
+
+  <script>
+    function sumEvens() {
+      let max = +document.getElementById('limit').value;
+      let sum = 0;
+      
+      for (let i = 1; i <= max; i++) {
+        if (i % 2 === 0) {
+          sum = sum + i;
+        }
+      }
+      
+      let resultElement = document.getElementById('result');
+      resultElement.textContent = sum;
+    }
+  </script>
+
+</body>
+</html>
