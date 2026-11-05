@@ -1,76 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Adrian Pop - Sum of Odd Numbers</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adrian Pop - Sum of Odd Numbers</title>
+  <link rel="icon" type="image/png" href="images/iconss.jpg">
   <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
-<div class="row">
-    <div class="navigation">
-       <a href="java1.html">NOT GATE</a>
-       <a href="java2.html">AND Gate</a>
-       <a href="java3.html">XOR Gate</a>
-       <a href="java4.html">OR Gate</a>
-       <a href="java5.html">Flip-Flop Circuit</a>
-       <a href="bmi.html">BMI Calculator</a>
-       <a href="sum.html">Sum Even Numbers</a>
-       <a href="odd.html">Sum Odd Numbers</a>
-       <a href="factorial.html">Factorial</a>
-    </div>
+  <h2>Sum of Odd Numbers</h2>
 
-    <div class="column">
+  <p>Enter an upper limit number:</p>
 
-        <h2>Sum of Odd Numbers</h2>
+  <label for="limit">Upper Limit:</label>
+  <input type="number" id="limit" aria-label="Upper limit number">
 
-        <p>This calculator iterates through numbers up to an upper limit to find the total sum of odd values.</p>
+  <br><br>
 
-        <img src="images/pix.jpg" style="width:300px; max-width:100%;">
+  <button onclick="sumOddsFunctional()">Calculate</button>
 
-        <h3>Calculate Odd Sum</h3>
-
-        <p>Enter an upper limit number:</p>
-
-        <label for="limit">Upper Limit:</label>
-        <input type="number" id="limit" aria-label="Upper limit number">
-
-        <br><br>
-
-        <button onclick="sumOdds()">Calculate</button>
-
-        <h3>Result</h3>
-
-        <p>The sum of all odd numbers up to that limit is:</p>
-        <h2 id="result"></h2>
-
-    </div>
-</div>
+  <h3>Result</h3>
+  <h2 id="result"></h2>
 
 <script>
-function sumOdds() {
-    // 1. Explicitly select the element and convert the text to a number
+function sumOddsFunctional() {
     let max = +document.getElementById('limit').value;
-    let sum = 0;
-    
-    // Check if input is a valid number
-    if (isNaN(max)) {
-        document.getElementById('result').textContent = "Please enter a valid number.";
-        return;
-    }
-    
-    // 2. Loop through all numbers from 1 up to 'max'
-    for (let i = 1; i <= max; i++) {
-        // If the remainder when dividing by 2 is NOT 0, it's an odd number
-        if (i % 2 !== 0) {
-            sum = sum + i;
-        }
-    }
-    
-    // 3. Securely display the final calculation
-    let resultElement = document.getElementById('result');
-    resultElement.textContent = sum;
+    let numbers = Array.from({ length: max }, (v, i) => i + 1);
+    let sum = numbers.filter(n => n % 2 !== 0).reduce((total, n) => total + n, 0);
+    document.getElementById('result').textContent = sum;
 }
 </script>
 
