@@ -1,67 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Adrian Pop - Functional Sum of Odd Numbers</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adrian Pop - Factorial Calculator</title>
+  <link rel="icon" type="image/png" href="images/iconss.jpg">
   <link rel="stylesheet" href="css.css">
 </head>
 <body>
 
-<div class="row">
-    <div class="navigation">
-       <a href="java1.html">NOT GATE</a>
-       <a href="java2.html">AND Gate</a>
-       <a href="java3.html">XOR Gate</a>
-       <a href="java4.html">OR Gate</a>
-       <a href="java5.html">Flip-Flop Circuit</a>
-       <a href="bmi.html">BMI Calculator</a>
-       <a href="sum.html">Sum Even Numbers</a>
-	   <a href="odd.html">Sum Odd Numbers </a>
-	   <a href="factorial.html">Factorial</a>
-    </div>
+  <h2>Factorial Calculator</h2>
 
-    <div class="column">
+  <p>Enter a number:</p>
 
-        <h2>Functional Sum of Odd Numbers</h2>
+  <label for="limit">Number:</label>
+  <input type="number" id="limit" aria-label="Factorial limit">
 
-        <p>This calculator uses modern JavaScript functional array methods to calculate the total sum of odd values.</p>
+  <br><br>
 
-        <img src="images/pix.jpg" style="width:300px; max-width:100%;">
+  <button onclick="calculateFactorial()">Calculate</button>
 
-        <h3>Calculate Odd Sum</h3>
-
-        <p>Enter an upper limit number:</p>
-
-        <label for="limit">Upper Limit:</label>
-        <input type="number" id="limit" aria-label="Upper limit number">
-
-        <br><br>
-
-        <button onclick="sumOddsFunctional()">Calculate</button>
-
-        <h3>Result</h3>
-
-        <p>The sum of all odd numbers up to that limit is:</p>
-        <h2 id="result"></h2>
-
-    </div>
-</div>
+  <h3>Result</h3>
+  <h2 id="result"></h2>
 
 <script>
-function sumOddsFunctional() {
+function calculateFactorial() {
     let max = +document.getElementById('limit').value;
-    
-    // Create an array of numbers from 1 to max
     let numbers = Array.from({ length: max }, (v, i) => i + 1);
-    
-    // Filter out evens and sum up the remaining odd numbers
-    let sum = numbers
-        .filter(n => n % 2 !== 0)
-        .reduce((total, n) => total + n, 0);
-    
-    // Show the result
-    document.getElementById('result').textContent = sum;
+    let total = numbers.reduce((product, n) => product * n, 1);
+    document.getElementById('result').textContent = total;
 }
 </script>
 
